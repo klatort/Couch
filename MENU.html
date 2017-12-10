@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {font-family: Arial;}
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+.month {
+    padding: 20px 25px;
+    width: 100%;
+    background: #1abc9c;
+    text-align: center;
+}
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+.weekdays th {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+.days td {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+    list-style-type: none;
+    display: inline-block;
+       width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+}
+/* Add media queries for smaller screens */
+@media screen and (max-width:1024px) {
+    .weekdays li, .days li {width: 13.1%;}
+}
+@media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+}
+@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 2px;}
+}
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+}
+/* Style the tab */
+                                                            div.tab {
+    overflow: hidden;
+    border: 0px solid white;
+    background-color: #f1f1f1;
+	width:100%;
+}
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: #5dade2;
+    float: left;
+    border: 1px solid white;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+	font-size: 3vw;
+    color: white;
+	width:25%;
+}
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color:#ffc300 ;
+}
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+<?php
+include_once "./func-coach.php";
+?>
+</head>
+<body>
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'FOTO')">FOTO</button>
+  <button class="tablinks" onclick="openTab(event, 'COACHEES')" id="defaultOpen">COACHEES</button>
+  <button class="tablinks" onclick="openTab(event, 'ESTADOS')">ESTADOS</button>
+  <button class="tablinks" onclick="openTab(event, 'MENSAJES')">MENSAJES</button>
+</div>
+<div id="FOTO" class="tabcontent">
+  <h3>FOTO</h3>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    Seleccione imagen a subir:
+    <input type="file" accept="image/*" capture="camera">
+</form>
+</div>
+<div id="COACHEES" class="tabcontent">
+  <h3>COACHEES</h3>
+<?php
+
+?>
+</div>
+<div id="ESTADOS" class="tabcontent">
+  <h3>ESTADOS</h3>
+	<p>Carajo</p>
+</div>
+<div id="MENSAJES" class="tabcontent">
+  <h3>MENSAJES</h3>
+  <p>.</p>
+</div>
+<script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+ for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+</body>
+</html>

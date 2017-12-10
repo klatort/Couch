@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {font-family: Arial;}
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+h2{color:white;background-color: #5dade2;}
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: #5dade2;
+    float: center;
+    border: 1px solid white;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+	font-size: 3vw;
+    color: white;
+	width:60%;
+}
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+</style>
+</head>
+<body>
+<center>
+<h2>Coaching app</h2>
+<table>
+<tr>
+<td>
+ <div data-role="fieldcontain" class="ui-hide-label">
+        <label for="txtUsuario"><h4>Usuario:</h4></label>
+        </td>
+        <td>
+        <input name="txtUsuario" id="txtUsuario" placeholder="Usuario: " value="" type="text">
+      </div>
+      </td>
+      </tr>
+      <tr>
+      <td>
+   
+        <label for="txtClave"><h4>Contrase&#241;a:</h4></label>
+        </td>
+        <td>
+        <input name="txtClave" id="txtClave" placeholder="Contrase&#241;a: " value="" type="password">
+      </div>
+      </td>
+      </tr>
+      </table>
+      <br>
+      <br>
+      <br>
+	 <div class="tab">
+        <button class="tablinks" id="btnIngreso" data-inline="true" data-theme="b" data-transition="flow" onClick="onLogon();"><h1>Ingresar</h1></button>
+        </div>
+      </div>
+</center>
+</body>
+</html>
